@@ -1,55 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Estrutura de Decisão</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
 </head>
 <body>
-  <h1>Estrutura de Decisão com switch</h1>
-  <div id="saida">Saída</div>
-
-  <script>
-    let dia = new Date().getDay(); // Obtém o dia da semana (0-6)
-    let saida = document.getElementById('saida');
-   
-    let dataAtual = new Date();
-    let diah = dataAtual.getDate();
-    let mes = dataAtual.getMonth() + 1; // Adiciona 1 porque os meses começam em 0
-    let ano = dataAtual.getFullYear();
-    let hora = dataAtual.getHours()
-    let minuto = dataAtual.getMinutes()
-    let hoje = " Dia "+diah + "/" + mes + "/" + ano +" - "+hora+"h"+minuto;
-    dia=2;
-    switch (dia) {
-      case 0:
-        saida.innerHTML = 'Hoje é Domingo!';
-        break;
-      case 1:
-        saida.innerHTML = 'Hoje é Segunda-feira!';
-        break;
-      case 2:
-        saida.innerHTML = 'Hoje é Terça-feira!';
-        break;
-      case 3:
-        saida.innerHTML = 'Hoje é Quarta-feira!';
-        break;
-      case 4:
-        saida.innerHTML = 'Hoje é Quinta-feira!';
-        break;
-      case 5:
-        saida.innerHTML = 'Hoje é Sexta-feira!';
-         break;
-      case 6:
-        saida.innerHTML = 'Hoje é Sábado!';
-        break;
-      default:
-        saida.innerHTML = 'Erro no cálculo do dia!';
-    }
-    saida.innerHTML += hoje +" "+dataAtual.toLocaleTimeString();
-    /*
-
-    Hoje é Sexta-feira, Dia 18/10/2024 - 09h50
-    */
-  </script>
+    <h1>Formulário</h1>
+    <form method="post" action="http://hebertphp.awardspace.us/recebe.php">
+        <label for="login">Login</label> <input type="text" id="login" name="login" required placeholder="Digite o login"><b>*</b><br>
+        <label for="senha">Senha</label> <input type="password" id="senha" name="senha" required placeholder="Digite a senha">*<br>
+        <h2>Linguagem HTML</h2>
+        <input type="checkbox" id="php" checked value="php"> <label for="login"></label> PHP<br>
+        <input type="checkbox" id="js" checked value="js"> <label for="js"></label> JS<br>
+        <input type="checkbox" id="sql" checked value="sql"><label for="sql"></label> SQL<br>
+        <h2>Dias da Semana</h2>
+        <input type="radio" name="2a" value="2a" required id="2a"><label for="2a">2a</label><br>     
+        <input type="radio" name="3a" value="3a" required id="3a"><label for="3a">3a</label><br>
+        <input type="radio" name="4a" value="4a" recquired id="4a"><label for="4a">4a</label><br>
+        <input type="radio" name="5a" value="5a" recquired id="5a"><label for="5a">5a</label><br>
+        <input type="radio" name="6a" value="6a" recquired id="6a"><label for="6a">6a</label><br>
+        <input type="radio" name="7a" value="7a" recquired id="7a"><label for="7a">7a</label><br>
+        <input type="reset" name="Redefinir" value="Limpar"><label for="Redefinir">Redefinir</label><br>
+        <input type="hidden" name="São Paulo - SP" value="São Paulo - SP">
+        UF <select name="uf">
+          <option selected>RJ</option>
+          <option>SP</option>
+          <option>MG</option>
+          <option>ES</option>
+        </select>
+        Msg<textarea name="msg" rows="10" cols="60">Digite</textarea>      
+        <h2>Teste na aula</h2>
+        <input type="text" name="Segunda" value="" id="text"><label for="Segunda"></label><br>
+        Data <input type="datetime-local" id="data" name="data"><br>
+        <input type="submit" value="Enviar!">
+    </form>
+    * - Campo obrigatório
 </body>
 </html>
